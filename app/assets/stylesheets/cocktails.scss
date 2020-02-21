@@ -1,0 +1,59 @@
+// Place all the styles related to the cocktails controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$gray: #F4F4F4;
+$spacer: 8px;
+
+.container-fluid {
+  padding: 0px;
+}
+
+#place-title {
+  margin-top: 50px;
+}
+
+
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  margin-bottom: 30px;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+
+img {
+  height: 200px;
+  border-radius: 5px;
+}
+
+body {
+  text-align: center;
+  background: $gray; // Using this variable
+}
+
+.btn {
+  margin-top: 20px;
+  padding: $spacer ($spacer * 3);
+}
+
+.btn-primary:hover {
+    background-color: #539fff;
+    border-color: #539fff;
+}
+
