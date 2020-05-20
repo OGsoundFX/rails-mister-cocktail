@@ -51,7 +51,7 @@ GEM
       msgpack (~> 1.0)
     builder (3.2.4)
     byebug (11.1.1)
-    cloudinary (1.14.0)
+    cloudinary (1.12.0)
       aws_cf_signer
       rest-client
     coffee-rails (4.2.2)
@@ -230,7 +230,7 @@ DEPENDENCIES
   autoprefixer-rails
   bootsnap (>= 1.1.0)
   byebug
-  cloudinary
+  cloudinary (~> 1.12.0)
   coffee-rails (~> 4.2)
   dotenv-rails
   font-awesome-sass (~> 5.6.1)
