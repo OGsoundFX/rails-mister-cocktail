@@ -11,5 +11,7 @@ Ingredient.create(name: "vodka")
 
 Cocktail.create(name: "Manhattan")
 Cocktail.create(name: "Gin Tonic")
+Cocktail.create(name: "Paparazzi")
+Cocktail.create(name: "WTF")
 
 puts "Finished creating ingredients"
