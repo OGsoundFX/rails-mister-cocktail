@@ -9,9 +9,9 @@ Ingredient.create(name: "tomato")
 Ingredient.create(name: "gin")
 Ingredient.create(name: "vodka")
 
-Cocktail.create(name: "Manhattan")
-Cocktail.create(name: "Gin Tonic")
-Cocktail.create(name: "Paparazzi")
-Cocktail.create(name: "WTF")
+# Cocktail.create(name: "Manhattan")
+# Cocktail.create(name: "Gin Tonic")
+# Cocktail.create(name: "Paparazzi")
+# Cocktail.create(name: "WTF")
 
 puts "Finished creating ingredients"
