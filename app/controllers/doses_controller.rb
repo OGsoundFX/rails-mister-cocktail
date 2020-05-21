@@ -2,7 +2,7 @@ class DosesController < ApplicationController
   def new
     @cocktail = Cocktail.find(params[:cocktail_id])
     @dose = Dose.new
-    @kind = %w(dose twist pinch cl)
+    @kind = %w(dose twist pinch cl leave slice)
   end
 
   def create
@@ -10,7 +10,11 @@ class DosesController < ApplicationController
     @cocktail = Cocktail.find(params[:cocktail_id])
     @dose.cocktail = @cocktail
     if @dose.save
-      redirect_to cocktail_path(@cocktail)
+      if params[:commit] == 'Add another Ingredient'
+        redirect_to new_cocktail_dose_path(@cocktail)
+      else
+        redirect_to cocktail_path(@cocktail)
+      end
     else
       render :new
     end

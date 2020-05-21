@@ -1,27 +1,31 @@
-<h1>Choose your ingredients</h1>
+<div class="container">
+  <div class="box">
+    <h1>Choose your ingredients</h1>
 
-<%= simple_form_for([@cocktail, @dose]) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    <%= simple_form_for([@cocktail, @dose]) do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
 
-  <div class="form-inputs">
-    <%= f.association :ingredient %>
+      <div class="form-inputs">
+        <%= f.association :ingredient %>
+      </div>
+
+      <div class="form-inputs">
+        <%= f.input :kind, collection: @kind, label: "Kind of dosage (dose, cl, pinch...)" %>
+      </div>
+
+      <div class="form-inputs">
+        <%= f.input :quantity, collection: 1..10, label: "Amout of the dosage" %>
+      </div>
+
+      <div class="form-inputs">
+        <%= f.input :comment %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, class: 'button_color', value: "Finish Cocktail" %> <%= f.button :submit, class: 'button_color', value: "Add another Ingredient" %>
+      </div>
+    <% end %>
   </div>
-
-  <div class="form-inputs">
-    <%= f.input :kind, collection: @kind %>
-  </div>
-
-  <div class="form-inputs">
-    <%= f.input :quantity, collection: 1..10 %>
-  </div>
-
-  <div class="form-inputs">
-    <%= f.input :comment %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+</div>

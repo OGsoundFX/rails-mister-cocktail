@@ -12,3 +12,13 @@
   border-width: 1px;
   background-color: $very_ligh_pink;
 }
+
+.button_color {
+  color: $pink;
+  font-weight: bold;
+}
+
+
+.button_color:hover {
+  color: $lighter_pink;
+}
