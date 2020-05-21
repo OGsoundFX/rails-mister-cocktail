@@ -1,3 +1,14 @@
 // Place all the styles related to the doses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.box {
+  padding: 20px;
+  width: 500px;
+  margin: auto;
+  margin-top: 100px;
+  border-style: solid;
+  border-radius: 4px;
+  border-color: $lighter_pink;
+  border-width: 1px;
+  background-color: $very_ligh_pink;
+}

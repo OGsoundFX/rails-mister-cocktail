@@ -1,14 +1,24 @@
-<h1><%= @cocktail.name %></h1>
+<div class="container">
+  <div class="box">
+    <h1><%= @cocktail.name %></h1>
 
-<%= link_to "Add Ingredients", new_cocktail_dose_path(@cocktail) %>
-</br>
-</br>
-<h3>List of ingredients:</h3>
+    <%= link_to "Add Ingredients", new_cocktail_dose_path(@cocktail) %>
+    </br>
+    </br>
+    <h3>List of ingredients:</h3>
+    <br>
+    <ul>
+      <% @cocktail.doses.each do |dose| %>
+      <% dose.kind = dose.kind + "s" if dose.quantity > 1 %>
+        <li> <strong> <%= dose.quantity %> <%= dose.kind %> of <%= Ingredient.find(dose.ingredient_id).name %> </strong>
+        <br> Instructions: <%= dose.comment %>
+        <br> <%= link_to "Delete ingredient", dose, method: :delete, data: { confirm: 'Are you sure?' }  %>
+        </li>
+      <br>
+      <% end %>
+    </ul>
 
-<ul>
-  <% @cocktail.doses.each do |dose| %>
-    <li><%= dose.description %> of <%= Ingredient.find(dose.ingredient_id).name %> - <%= link_to "Delete ingredient", dose, method: :delete, data: { confirm: 'Are you sure?' }  %></li>
-  <% end %>
-</ul>
+    <%= link_to "Back to Cocktails", cocktails_path %>
 
-<%= link_to "Back to Cocktails", cocktails_path %>
+  </div>
+</div>
