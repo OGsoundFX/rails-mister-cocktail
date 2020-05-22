@@ -16,7 +16,7 @@
       </div>
 
       <div class="form-inputs">
-        <%= f.input :quantity, collection: 1..10, label: "Amout of the dosage" %>
+        <%= f.input :quantity, collection: 1..25, label: "Amout of the dosage" %>
       </div>
 
       <div class="form-inputs">
@@ -27,5 +27,7 @@
         <%= f.button :submit, class: 'button_color', value: "Finish Cocktail" %> <%= f.button :submit, class: 'button_color', value: "Add another Ingredient" %>
       </div>
     <% end %>
+      <%= link_to "cancel", cocktail_path(@cocktail), class: 'btn_cancel' %>
+
   </div>
 </div>

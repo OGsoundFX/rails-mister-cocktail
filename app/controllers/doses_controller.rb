@@ -2,24 +2,8 @@ class DosesController < ApplicationController
   def new
     @cocktail = Cocktail.find(params[:cocktail_id])
     @dose = Dose.new
-    @kind = %w(dose twist pinch cl leave slice oz unity gram).sort
-
-    # @quantity
-
-    @ingredients = []
-    categories = ["Alcohol", "Soda", "Juice", "Veggies", "Spice", "Other"]
-    categories.each do |category|
-      array = []
-      category_array = []
-      array << Ingredient.where(category: category)
-      ingredient_name = []
-      array[0].each do |ingredient|
-        ingredient_name << ingredient.name
-      end
-      category_array << category
-      category_array << ingredient_name
-      @ingredients << category_array
-    end
+    kind
+    ingredients
   end
 
   def create
@@ -36,6 +20,8 @@ class DosesController < ApplicationController
         redirect_to cocktail_path(@cocktail)
       end
     else
+      kind
+      ingredients
       render :new
     end
   end
@@ -50,5 +36,26 @@ class DosesController < ApplicationController
 
   def dose_params
     params.require(:dose).permit(:comment, :ingredient_id, :quantity, :kind)
+  end
+
+  def kind
+    @kind = %w(dose twist pinch cl leave slice oz unity gram).sort
+  end
+
+  def ingredients
+    @ingredients = []
+    categories = ["Alcohol", "Soda", "Juice", "Veggies", "Spice", "Other"]
+    categories.each do |category|
+      array = []
+      category_array = []
+      array << Ingredient.where(category: category)
+      ingredient_name = []
+      array[0].each do |ingredient|
+        ingredient_name << ingredient.name
+      end
+      category_array << category
+      category_array << ingredient_name
+      @ingredients << category_array
+    end
   end
 end
