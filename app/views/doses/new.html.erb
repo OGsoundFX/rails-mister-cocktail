@@ -27,7 +27,9 @@
         <%= f.button :submit, class: 'button_color', value: "Finish Cocktail" %> <%= f.button :submit, class: 'button_color', value: "Add another Ingredient" %>
       </div>
     <% end %>
+    <br>
+    <div class="d-flex justify-content-end">
       <%= link_to "cancel", cocktail_path(@cocktail), class: 'btn_cancel' %>
-
+    </div>
   </div>
 </div>
