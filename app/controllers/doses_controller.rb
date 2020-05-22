@@ -2,7 +2,22 @@ class DosesController < ApplicationController
   def new
     @cocktail = Cocktail.find(params[:cocktail_id])
     @dose = Dose.new
-    @kind = %w(dose twist pinch cl leave slice)
+    @kind = %w(dose twist pinch cl leave slice oz unity)
+
+    @ingredients = []
+    categories = ["Alcohol", "Soda", "Juice", "Veggies", "Spice", "Other"]
+    categories.each do |category|
+      array = []
+      category_array = []
+      array << Ingredient.where(category: category)
+      ingredient_name = []
+      array[0].each do |ingredient|
+        ingredient_name << ingredient.name
+      end
+      category_array << category
+      category_array << ingredient_name
+      @ingredients << category_array
+    end
   end
 
   def create

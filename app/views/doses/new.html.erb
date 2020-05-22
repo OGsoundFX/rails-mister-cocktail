@@ -8,7 +8,7 @@
 
 
       <div class="form-inputs">
-        <%= f.association :ingredient %>
+        <%= f.association :ingredient, collection: @ingredients, as: :grouped_select, group_method: :last  %>
       </div>
 
       <div class="form-inputs">

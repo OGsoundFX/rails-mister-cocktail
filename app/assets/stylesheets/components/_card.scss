@@ -5,6 +5,7 @@
 }
 
 .card-trip {
+  margin-bottom: 20px;
   border-radius: 5px;
   overflow: hidden;
   background: white;
@@ -31,6 +32,7 @@
 
 
 .card-trip .card-trip-infos {
+  width: 350px;
   padding: 16px;
   display: flex;
   justify-content: space-between;
