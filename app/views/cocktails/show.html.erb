@@ -17,8 +17,12 @@
       <% @cocktail.doses.each do |dose| %>
       <% dose.kind = dose.kind + "s" if dose.quantity > 1 %>
         <li> <strong> <%= dose.quantity %> <%= dose.kind %> of <%= Ingredient.find(dose.ingredient_id).name %> </strong>
-        <br> Instructions: <%= dose.comment %>
-        <br> <%= link_to "Delete ingredient", dose, method: :delete, data: { confirm: 'Are you sure?' }  %>
+        <% if dose.comment != "" %>
+          <br>
+          Comment: <%= dose.comment %>
+        <% end %>
+        <br>
+        <%= link_to "Delete ingredient", dose, method: :delete, data: { confirm: 'Are you sure?' }  %>
         </li>
       <br>
       <% end %>

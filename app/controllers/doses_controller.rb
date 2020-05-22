@@ -2,7 +2,9 @@ class DosesController < ApplicationController
   def new
     @cocktail = Cocktail.find(params[:cocktail_id])
     @dose = Dose.new
-    @kind = %w(dose twist pinch cl leave slice oz unity)
+    @kind = %w(dose twist pinch cl leave slice oz unity gram).sort
+
+    # @quantity
 
     @ingredients = []
     categories = ["Alcohol", "Soda", "Juice", "Veggies", "Spice", "Other"]
@@ -22,6 +24,9 @@ class DosesController < ApplicationController
 
   def create
     @dose = Dose.new(dose_params)
+    if @dose.ingredient_id
+      @dose.ingredient_id = Ingredient.where(name: dose_params['ingredient_id'])[0].id
+    end
     @cocktail = Cocktail.find(params[:cocktail_id])
     @dose.cocktail = @cocktail
     if @dose.save

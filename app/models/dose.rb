@@ -2,9 +2,7 @@ class Dose < ApplicationRecord
   belongs_to :cocktail
   belongs_to :ingredient
 
-  validates :comment, presence: true
-  validates :kind, presence: true
-  validates :quantity, presence: true
-  validates :quantity, inclusion: { in: 1..10 }
+  validates :kind, presence: { message: 'of dosage should not be empty' }
+  validates :quantity, presence: { message: 'should not be empty' }
   validates_uniqueness_of :cocktail_id, scope: :ingredient_id
 end
