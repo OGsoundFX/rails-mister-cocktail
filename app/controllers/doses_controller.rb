@@ -54,7 +54,7 @@ class DosesController < ApplicationController
         ingredient_name << ingredient.name
       end
       category_array << category
-      category_array << ingredient_name
+      category_array << ingredient_name.sort
       @ingredients << category_array
     end
   end
