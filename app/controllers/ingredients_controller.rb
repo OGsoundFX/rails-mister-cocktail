@@ -1,14 +1,13 @@
 class IngredientsController < ApplicationController
   def new
-    raise
     @ingredient = Ingredient.new
+    session[:return_to] ||= request.referer
   end
 
   def create
-    @cocktail = Cocktail.find(params[:id])
     @ingredient = Ingredient.new(ingredient_params)
     if @ingredient.save
-      redirect_to new_cocktail_dose_path(@cocktail)
+      redirect_to session.delete(:return_to)
     else
       render :new
     end
