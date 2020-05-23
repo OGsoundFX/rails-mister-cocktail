@@ -4,4 +4,5 @@ root to: 'cocktails#index'
     resources :doses, only: [:new, :create]
   end
   resources :doses, only: [:destroy]
+  resources :ingredients, only: [:new, :create]
 end

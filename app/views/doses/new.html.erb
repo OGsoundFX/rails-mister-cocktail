@@ -8,7 +8,11 @@
 
 
       <div class="form-inputs">
-        <%= f.association :ingredient, collection: @ingredients, as: :grouped_select, group_method: :last  %>
+        <%= f.association :ingredient, collection: @ingredients, as: :grouped_select, group_method: :last %>
+      </div>
+
+      <div class="mb-4">
+        <%= link_to "Not in the list? Add your own ingredient!", new_ingredient_path, class: 'btn_cancel' %>
       </div>
 
       <div class="form-inputs">
