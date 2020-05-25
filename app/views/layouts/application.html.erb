@@ -5,19 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Share Your Cocktail</title>
     <%= favicon_link_tag asset_path('favicon.ico') %>
-
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
   </head>
 
   <body>
-    <h1 id="hello">HELLO</h1>
     <%= yield %>
-    <%= javascript_include_tag "application" %>
-    <%= javascript_pack_tag "application" %>
     <%= render 'shared/footer' unless @display_footer == false %>
+    <%= javascript_pack_tag "application" %>
   </body>
 </html>

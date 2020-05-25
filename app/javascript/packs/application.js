@@ -19,5 +19,9 @@
 console.log('Hello World from Webpacker')
 import 'bootstrap';
 
-const something = document.querySelector('#list');
+const somethingElse = document.querySelector('#place-title');
+console.log(somethingElse);
+
+const something = document.querySelector('.title');
 console.log(something);
+
