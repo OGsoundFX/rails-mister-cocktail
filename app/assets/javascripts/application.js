@@ -14,3 +14,6 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+const something = document.querySelector('#list');
+console.log(something);
