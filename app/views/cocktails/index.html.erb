@@ -1,6 +1,6 @@
 <div class="container-fluid no-padding">
 
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1286&q=80);">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= cl_image_path Cocktail.last.photo.key %>);">
     <div class="container">
       <h1 id="place-title">Share your <strong>Cocktail</strong> recepies!</h1>
       <%= link_to "Share your Cocktail", new_cocktail_path, class:"btn btn-primary" %>
