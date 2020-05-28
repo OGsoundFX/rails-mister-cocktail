@@ -1,13 +1,12 @@
 <div class="container-fluid no-padding">
 
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= cl_image_path Cocktail.last.photo.key %>);">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= cl_image_path Cocktail.first.photo.key %>);">
     <div class="container">
       <h1 id="place-title">Share your <strong>Cocktail</strong> recepies!</h1>
       <%= link_to "Share your Cocktail", new_cocktail_path, class:"btn btn-primary" %>
     </div>
   </div>
 </div>
-
 <div class="container">
   <div class="row">
     <% @cocktails.each do |cocktail| %>
@@ -36,7 +35,6 @@
 <div class="container">
   <div class="row">
     <% @cocktails.each do |cocktail| %>
-
       <div class="col-sm-12 col-md-6 col-lg-4">
         <%= link_to(cocktail) do %>
           <div class="container d-flex justify-content-between">
@@ -56,7 +54,6 @@
           </div>
         <% end %>
       </div>
-
     <% end %>
   </div>
 </div>

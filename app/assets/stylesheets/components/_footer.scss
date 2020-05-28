@@ -6,7 +6,7 @@
   height: 70px;
   padding: 10px 50px;
   color: white;
-  flex-shrink: 0;
+  position: relative;
 }
 
 .footer-links {
@@ -34,5 +34,5 @@ html {
 body {
   min-height: 100%;
   display: grid;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr;
 }
