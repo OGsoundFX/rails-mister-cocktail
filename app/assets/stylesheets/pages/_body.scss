@@ -1,0 +1,10 @@
+// this is to make the footer stick to the bottom
+
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}

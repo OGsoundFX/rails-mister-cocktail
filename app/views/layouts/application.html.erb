@@ -11,6 +11,7 @@
   </head>
 
   <body>
+    <%= render 'shared/footer' unless @display_footer == false %>
     <%= yield %>
     <%= render 'shared/footer' unless @display_footer == false %>
     <%= javascript_pack_tag "application" %>
