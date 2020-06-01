@@ -11,7 +11,9 @@
   </head>
 
   <body>
-    <%= render 'shared/footer' unless @display_footer == false %>
+    <div class="fixed-top">
+      <%= render 'shared/footer' unless @display_footer == false %>
+    </div>
     <%= yield %>
     <%= render 'shared/footer' unless @display_footer == false %>
     <%= javascript_pack_tag "application" %>
