@@ -18,9 +18,11 @@
 console.log('Hello World from Webpacker')
 import 'bootstrap';
 
-const somethingElse = document.querySelector('#place-title');
-console.log(somethingElse);
 
-const something = document.querySelector('.title');
+window.addEventListener('DOMContentLoaded', (event) => {
+  const something = document.querySelector('#place-title');
+  console.log(something.textContent);
+});
+
+const something = document.querySelector('.banner');
 console.log(something);
-
