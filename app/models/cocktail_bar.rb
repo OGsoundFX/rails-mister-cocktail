@@ -1,0 +1,2 @@
+class CocktailBar < ApplicationRecord
+end
