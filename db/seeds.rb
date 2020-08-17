@@ -49,9 +49,23 @@
 
 # puts "Finished creating ingredients"
 
+require 'open-uri'
 
-Cocktail.create(name: "hello Again", author: "me")
+CocktailBar.destroy_all
 
-cocktail = Cocktail.last
+puts CocktailBar.count
 
-cocktail.photo.attach(io: URI.open('https://res.cloudinary.com/dqbzzl00v/image/upload/v1583845557/user-imgs/Malvina_Ivanov_zc4bmq.jpg'), filename: 'photo.jpg')
+bar1 = CocktailBar.create(name: "Nice Cocktail Lounge Bar Berlin", address: "Sredzkistraße 14, Berlin")
+bar2 = CocktailBar.create(name: "Green Door Bar", address: "Winterfeldtstraße 50, 10781 Berlin")
+bar3 = CocktailBar.create(name: "Saphire Bar Berlin", address: "Bötzowstraße 31, 10407 Berlin")
+bar4 = CocktailBar.create(name: "REDWOOD Bar Berlin", address: "Bergstraße 25, 10115 Berlin")
+
+# bar1.photo.attach(io: File.open('../../app/assets/images/bar1.jpg'), filename: 'bar1.jpg')
+# bar1.photo.service_url(io: File.open('../../app/assets/images/bar1.jpg'), filename: 'bar1.jpg')
+
+bar1.photo.attach(io: URI.open("https://www.ogsoundfx.com/ogcoding/photo_test/image#{rand(1..5)}.jpg"), filename: 'bar1')
+bar2.photo.attach(io: URI.open("https://www.ogsoundfx.com/ogcoding/photo_test/image#{rand(1..5)}.jpg"), filename: 'bar1')
+bar3.photo.attach(io: URI.open("https://www.ogsoundfx.com/ogcoding/photo_test/image#{rand(1..5)}.jpg"), filename: 'bar1')
+bar4.photo.attach(io: URI.open("https://www.ogsoundfx.com/ogcoding/photo_test/image#{rand(1..5)}.jpg"), filename: 'bar1')
+
+puts CocktailBar.count

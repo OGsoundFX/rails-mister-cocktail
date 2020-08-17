@@ -1,0 +1,30 @@
+<div class="container-fluid no-padding">
+
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1286&amp;q=80);">
+    <div class="container">
+      <h1 id="place-title">Share your <strong>Cocktail</strong> recepies!</h1>
+      <%= link_to "Share your Cocktail", new_cocktail_path, class:"btn btn-primary" %>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <% @bars.each do |bar| %>
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="container d-flex justify-content-between">
+          <div class="card-trip">
+            <% if bar.photo.attached? %>
+              <%= image_tag bar.photo, crop: :fill %>
+            <% end %>
+            <div class="card-trip-infos">
+              <div class="d-flex">
+                <h2><%= link_to bar.name, cocktail_bars_path %></h2>&nbsp&nbsp&nbsp<h6>location: <%= bar.address %></h6>
+              </div>
+              <h2 class="card-trip-pricing"><%=  %></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
