@@ -1,6 +1,11 @@
 class CocktailBarsController < ApplicationController
   def index
-    @bars = CocktailBar.geocoded
+    if params[:query].present?
+      sql_query = "city ILIKE :query OR address ILIKE :query"
+      @bars = CocktailBar.geocoded.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @bars = CocktailBar.geocoded
+    end
 
     @markers = @bars.map do |bar|
       {

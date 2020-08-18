@@ -2,8 +2,15 @@
 
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1286&amp;q=80);">
     <div class="container">
-      <h1 id="place-title">Share your <strong>Cocktail</strong> recepies!</h1>
-      <%= link_to "Share your Cocktail", new_cocktail_path, class:"btn btn-primary" %>
+      <h1 id="place-title">Look for <strong>Cocktail Bars</strong></h1>
+      <%= form_tag cocktail_bars_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a Cocktail Bar"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
     </div>
   </div>
 </div>
