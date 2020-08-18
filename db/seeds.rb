@@ -60,12 +60,16 @@ bar2 = CocktailBar.create(name: "Green Door Bar", address: "Winterfeldtstraße 5
 bar3 = CocktailBar.create(name: "Saphire Bar Berlin", address: "Bötzowstraße 31, 10407 Berlin")
 bar4 = CocktailBar.create(name: "REDWOOD Bar Berlin", address: "Bergstraße 25, 10115 Berlin")
 
-# bar1.photo.attach(io: File.open('../../app/assets/images/bar1.jpg'), filename: 'bar1.jpg')
-# bar1.photo.service_url(io: File.open('../../app/assets/images/bar1.jpg'), filename: 'bar1.jpg')
+# fetch photos from local folder
+bar1.photo.attach(io: File.open(File.join(Rails.root,'app/assets/images/bar1.jpg')), filename: 'bar1')
+bar1.photo.attach(io: File.open(File.join(Rails.root,'app/assets/images/bar2.jpg')), filename: 'bar2')
+bar1.photo.attach(io: File.open(File.join(Rails.root,'app/assets/images/bar3.jpg')), filename: 'bar3')
+bar1.photo.attach(io: File.open(File.join(Rails.root,'app/assets/images/bar4.jpg')), filename: 'bar4')
 
-bar1.photo.attach(io: URI.open("https://www.ogsoundfx.com/ogcoding/photo_test/image#{rand(1..5)}.jpg"), filename: 'bar1')
-bar2.photo.attach(io: URI.open("https://www.ogsoundfx.com/ogcoding/photo_test/image#{rand(1..5)}.jpg"), filename: 'bar1')
-bar3.photo.attach(io: URI.open("https://www.ogsoundfx.com/ogcoding/photo_test/image#{rand(1..5)}.jpg"), filename: 'bar1')
-bar4.photo.attach(io: URI.open("https://www.ogsoundfx.com/ogcoding/photo_test/image#{rand(1..5)}.jpg"), filename: 'bar1')
+# fetch photos from url
+# bar1.photo.attach(io: URI.open("https://www.ogsoundfx.com/ogcoding/photo_test/image#{rand(1..5)}.jpg"), filename: 'bar1')
+# bar2.photo.attach(io: URI.open("https://www.ogsoundfx.com/ogcoding/photo_test/image#{rand(1..5)}.jpg"), filename: 'bar1')
+# bar3.photo.attach(io: URI.open("https://www.ogsoundfx.com/ogcoding/photo_test/image#{rand(1..5)}.jpg"), filename: 'bar1')
+# bar4.photo.attach(io: URI.open("https://www.ogsoundfx.com/ogcoding/photo_test/image#{rand(1..5)}.jpg"), filename: 'bar1')
 
 puts CocktailBar.count
