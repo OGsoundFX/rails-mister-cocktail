@@ -24,6 +24,7 @@ gem 'cloudinary', "~> 1.12.0"
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'geocoder'
 gem 'simple_form'
+gem 'pg_search', '~> 2.3.0'
 
 gem "dotenv-rails", groups: [:development, :test]
 

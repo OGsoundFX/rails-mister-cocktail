@@ -55,10 +55,10 @@ CocktailBar.destroy_all
 
 puts CocktailBar.count
 
-bar1 = CocktailBar.create(name: "Nice Cocktail Lounge Bar Berlin", address: "Sredzkistraße 14, Berlin")
-bar2 = CocktailBar.create(name: "Green Door Bar", address: "Winterfeldtstraße 50, 10781 Berlin")
-bar3 = CocktailBar.create(name: "Saphire Bar Berlin", address: "Bötzowstraße 31, 10407 Berlin")
-bar4 = CocktailBar.create(name: "REDWOOD Bar Berlin", address: "Bergstraße 25, 10115 Berlin")
+bar1 = CocktailBar.create(name: "Nice Cocktail Lounge Bar Berlin", address: "Sredzkistraße 14, Berlin", city: "Berlin")
+bar2 = CocktailBar.create(name: "Green Door Bar", address: "Winterfeldtstraße 50, 10781 Berlin", city: "Berlin")
+bar3 = CocktailBar.create(name: "Saphire Bar Berlin", address: "Bötzowstraße 31, 10407 Berlin", city: "Berlin")
+bar4 = CocktailBar.create(name: "REDWOOD Bar Berlin", address: "Bergstraße 25, 10115 Berlin", city: "Berlin")
 
 # fetch photos from local folder
 bar1.photo.attach(io: File.open(File.join(Rails.root,'app/assets/images/bar1.jpg')), filename: 'bar1')
