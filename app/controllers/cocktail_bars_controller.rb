@@ -4,7 +4,7 @@ class CocktailBarsController < ApplicationController
       sql_query = "city ILIKE :query OR address ILIKE :query"
       @bars = CocktailBar.geocoded.where(sql_query, query: "%#{params[:query]}%")
     else
-      @bars = CocktailBar.geocoded
+      @bars = CocktailBar.geocoded.where(city: "Berlin")
     end
 
     @markers = @bars.map do |bar|
